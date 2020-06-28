@@ -68,7 +68,9 @@ Ten         Warning with "Not Valid! Please enter a number between 1 and 3999, i
 
    - Conversion result should be displayed using the `result.html` with template formatting. 
 
-- Lastly, after transforming your code into web application, you are requested to push your program to the project repository on the Github and deploy your solution in the development environment on AWS EC2 Instance using AWS Cloudformation Service to showcase your project. In the development environment, you can configure your Cloudformation template using the followings,
+- Lastly, after transforming your code into web application, you are requested to push your program to the project repository on the Github and 
+deploy your solution in the development environment on AWS EC2 Instance using AWS Cloudformation Service to showcase your project. 
+In the development environment, you can configure your Cloudformation template using the followings,
 
    - The application stack should be created with new AWS resources. 
    
