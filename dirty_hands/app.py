@@ -42,4 +42,5 @@ def main_post():
     return render_template('result.html', developer_name='GROUP CLOUDERS', milliseconds=number, result=converter(number))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)

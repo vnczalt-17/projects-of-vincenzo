@@ -40,11 +40,26 @@ Resources:
                     yum update -y
                     yum install python3 -y
                     pip3 install flask
-                    wget -P templates https://raw.githubusercontent.com/callahan-cw/clarusway-aws-workshop/master/001-roman-numerals-converter/templates/index.html
-                    wget -P templates https://raw.githubusercontent.com/callahan-cw/clarusway-aws-workshop/master/001-roman-numerals-converter/templates/result.html
-                    wget https://raw.githubusercontent.com/callahan-cw/clarusway-aws-workshop/master/001-roman-numerals-converter/app.py
+                    wget -P templates https://raw.githubusercontent.com/vnczalt-17/projects-of-vincenzo/master/dirty_hands/templates/index.html
+                    wget -P templates https://raw.githubusercontent.com/vnczalt-17/projects-of-vincenzo/master/dirty_hands/templates/result.html
+                    wget https://raw.githubusercontent.com/vnczalt-17/projects-of-vincenzo/master/dirty_hands/app.py
                     python3 app.py
-                    
+    myASG:
+        Type: AWS::AutoScaling::AutoScalingGroup
+        Properties:
+            AutoScalingGroupName: myASG
+            MinSize: "1"
+            MaxSize: "3"
+            DesiredCapacity: "2"
+            HealthCheckGracePeriod: 90
+            HealthCheckType: ELB
+            VPCZoneIdentifier:
+                - subnet-11d6244e
+                - subnet-a6ebee98
+                - subnet-dc4acb91
+                - subnet-d7fc57d9
+                - subnet-5e3bc77f
+                - subnet-855caae3                    
 Outputs:
     WebsiteURL:
         Description: Roman Numerals Converter Application Website URL
