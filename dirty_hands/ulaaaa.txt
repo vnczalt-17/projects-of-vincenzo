@@ -1,0 +1,5 @@
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-rds.html
+
+https://github.com/seankreid/python-phonebook/blob/master/phonebook.py
+
