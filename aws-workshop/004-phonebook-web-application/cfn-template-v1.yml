@@ -2,9 +2,6 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: |
   Cloudformation template for Phonebook Application.
 
-Parameters:
-  
-
 Resources:
   WebServerSecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
@@ -42,12 +39,12 @@ Resources:
               #export DB_URL_1="${MyDBURI}"
               #export DB_URL_2="${MyDatabaseServer.Endpoint.Address}"
               echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
-              FOLDER="https://raw.githubusercontent.com/clarusway/clarusway-aws-devops-1-20/master/aws/projects/004-phonebook-web-application/"
+              FOLDER="https://raw.githubusercontent.com/vnczalt-17/projects-of-vincenzo/master/aws-workshop/004-phonebook-web-application"
               curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
               curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"templates/add-update.html
               curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
-              curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"app.py
-              python3 /home/ec2-user/app.py
+              curl -s --create-dirs -o "/home/ec2-user/app-v1.py" -L "$FOLDER"app-v1.py
+              python3 /home/ec2-user/app-v1.py
             - MyDBURI: !GetAtt MyDatabaseServer.Endpoint.Address
 
   MyDBSecurityGroup:
