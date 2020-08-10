@@ -1,0 +1,22 @@
+
+  myASG:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      AutoScalingGroupName: myASG
+      MinSize: "1"
+      MaxSize: "3"
+      DesiredCapacity: "2"
+      HealthCheckGracePeriod: 90
+      HealthCheckType: ELB
+      VPCZoneIdentifier:
+        - subnet-11d6244e
+        - subnet-a6ebee98
+        - subnet-dc4acb91
+        - subnet-d7fc57d9
+        - subnet-5e3bc77f
+        - subnet-855caae3
+
+
+
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-vpczoneidentifier
